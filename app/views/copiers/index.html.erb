@@ -1,0 +1,11 @@
+<%= form_tag(copiers_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search copiers" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% if @cops.present? %>
+  <%= render @cops %>
+<% else %>
+  <p>No copiers to be found...</p>
+<% end %>
+  
