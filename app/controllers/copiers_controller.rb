@@ -1,5 +1,6 @@
 class CopiersController < ApplicationController
   respond_to :json
+  before_action :logged_in_admin, only: [:new, :create, :delete]
   
   def new
     @copier = Copier.new
@@ -8,9 +9,11 @@ class CopiersController < ApplicationController
   def create
     @copier = Copier.new copier_params
     if @copier.save
+      flash[:notice] = "Copier successfully created!"
       redirect_to @copier
     else
-      redirect_to index
+      flash[:notice] = "Copier not successfully created"
+      redirect_to root_url
     end
   end
   
@@ -40,6 +43,13 @@ class CopiersController < ApplicationController
   
     def copier_params
       params.require(:copier).permit(:name, :manufacturer, :papercut, :coinop, :card_reader)
+    end
+    
+    def logged_in_admin
+      unless admin_logged_in?
+        flash[:notice] = "Please log in as admin."
+        redirect_to login_url
+      end
     end
   
 end

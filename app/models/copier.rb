@@ -1,4 +1,5 @@
 class Copier < ActiveRecord::Base
+    validates :name, uniqueness: true
     
     # def self.search(search)
     #     result = where("name LIKE ?", "%#{search}%")

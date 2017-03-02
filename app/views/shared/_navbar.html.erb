@@ -5,7 +5,7 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand"><%= link_to("Brand", root_url) %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -15,7 +15,12 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Admin Login</a></li>
+            <% if admin_logged_in? %>
+              <li><%= link_to('Log out', logout_path, :method => :delete) %></li>
+            <% else %>
+              <li><%= link_to('Admin Login', login_path) %></li>
+            <% end %>
+            <!-- <li><a href="#">Admin Login</a></li> -->
             <li><a href="#">Help</a></li>
             <li><a href="#">Contact</a></li>
           </ul>

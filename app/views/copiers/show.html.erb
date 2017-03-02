@@ -1,3 +1,7 @@
 <h1>Copier details</h1>
 
 <p><%= @copier.name %></p>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
