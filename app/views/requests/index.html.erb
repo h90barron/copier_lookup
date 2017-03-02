@@ -1,0 +1,26 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Supports Papercut</th>
+      <th>Supports Coinop</th>
+      <th>Supports card reader</th>
+      <th>Submitter's name</th>
+      <th>Submitter's phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= div_for @requests do |f| %>
+    <tr data-link="<%= request_path(f) %>">
+      <td><%= f.name %></td>
+      <td><%= f.manufacturer %></td>
+      <td><%= f.papercut %></td>
+      <td><%= f.coinop %></td>
+      <td><%= f.card_reader %></td>
+      <td><%= f.user_name %></td>
+      <td><%= f.user_phone %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

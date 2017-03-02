@@ -1,0 +1,10 @@
+<h3>Request details</h3>
+<%= @request.name %>
+<p></p>
+<%= @request.user_name %>
+<p></p>
+<%= link_to "Edit", edit_request_path %>
+<p></p>
+<%= link_to "Delete", request_path, :method => :delete %>
+<p></p>
+<%= link_to "Approve", request_path, :method => :accept %>
