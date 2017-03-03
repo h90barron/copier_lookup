@@ -2,7 +2,7 @@
   <% if admin_logged_in? %>
     <p class="text-right">Add new copier <%= link_to "New Copier", new_copier_path %></p>
   <% else %>
-    <p class="text-right">Request a copier be added Here</p>
+    <p class="text-right">Request a copier be added <%= link_to "Here", new_request_path %></p>
   <% end %>
 </div>
 

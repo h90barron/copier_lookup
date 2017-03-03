@@ -2,6 +2,11 @@
 
 <p><%= @copier.name %></p>
 
+<% if admin_logged_in? %>
+  <%= link_to "Delete", copier_path, method: :delete %>
+  <p></p>
+  <%= link_to "Edit", edit_copier_path %>
+<% end %>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
