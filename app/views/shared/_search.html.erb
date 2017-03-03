@@ -1,11 +1,21 @@
 <form>
-  <div class="form-group">
-    <label for="search_copier">Copier Search</label>
-    <%= search_form_for @q, html: { class: "form-inline", id: "search_copier" } do |f| %>
-      <%= f.search_field :name_or_manufacturer_cont, placeholder: "Search...", class: "form-control" %>
-      
+
+<div class="form-group">
+  <%= search_form_for @search do |f| %>
+    <%= f.condition_fields do |c| %>
+      <div class="field">
+        <%= c.attribute_fields do |a| %>
+          <%= a.attribute_select %>
+        <% end %>
+        <%= c.predicate_select %>
+        <%= c.value_fields do |v| %>
+          <%= v.text_field :value %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
+    <div class="actions"><%= f.submit "Search" %></div>
+  <% end %>
+</div>
   <!--<div class="form-group">-->
   <!--  <label for="formGroupExampleInput2">Another label</label>-->
   <!--  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">-->

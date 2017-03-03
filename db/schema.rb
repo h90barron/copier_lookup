@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222213155) do
+ActiveRecord::Schema.define(version: 20170302161451) do
 
   create_table "copiers", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20170222213155) do
     t.boolean  "papercut"
     t.boolean  "coinop"
     t.boolean  "card_reader"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string   "name"
+    t.string   "manufacturer"
+    t.boolean  "papercut"
+    t.boolean  "coinop"
+    t.boolean  "card_reader"
+    t.string   "user_name"
+    t.string   "user_phone"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

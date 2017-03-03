@@ -16,7 +16,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if admin_logged_in? %>
+              <li><%= link_to 'View pending requests', requests_path %></li>
               <li><%= link_to('Log out', logout_path, :method => :delete) %></li>
+              
             <% else %>
               <li><%= link_to('Admin Login', login_path) %></li>
             <% end %>

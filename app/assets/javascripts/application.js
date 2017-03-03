@@ -17,13 +17,13 @@
 //= require_tree .
 
 
-$(function($) {
-
+//use turbolinks:load to avoid DOM load issues
+$(document).on('turbolinks:load', function() {
     $("tr[data-link]").click(function() {
-        window.location = $(this).data('link');
+    window.location = $(this).data('link');
     });
+})
 
-});
 
 // $(function() {
 //     $("td[colspan=3]").find("p").hide();
