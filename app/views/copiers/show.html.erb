@@ -1,7 +1,7 @@
 <h1>Copier details</h1>
-
-<p><%= @copier.name %></p>
-
+<% if @copier %>
+  <p><%= @copier.name %></p>
+<% end %>
 <% if admin_logged_in? %>
   <%= link_to "Delete", copier_path, method: :delete %>
   <p></p>

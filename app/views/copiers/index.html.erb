@@ -1,11 +1,3 @@
-<div>
-  <% if admin_logged_in? %>
-    <p class="text-right">Add new copier <%= link_to "New Copier", new_copier_path %></p>
-  <% else %>
-    <p class="text-right">Request a copier be added <%= link_to "Here", new_request_path %></p>
-  <% end %>
-</div>
-
 <%= render 'shared/search' %>
 <table class="table table-hover">
   <thead>
@@ -29,10 +21,6 @@
     <% end %>
   </tbody>
 </table>
-
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
 
 
 

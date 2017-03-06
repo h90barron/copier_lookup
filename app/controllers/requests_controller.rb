@@ -9,11 +9,10 @@ class RequestsController < ApplicationController
     @request = Request.new request_params
     if @request.save
       flash[:notice] = "Request submitted successfully"
-      redirect_to action: :index
     else
       flash[:notice] = "Request failed to submit"
     end
-    redirect_to action: :index
+    redirect_to '/copiers'
   end
   
   def index
@@ -25,6 +24,18 @@ class RequestsController < ApplicationController
   end
   
   def edit
+    @request = Request.find_by(id: params[:id])
+  end
+  
+  def update
+    req = Request.find_by(id: params[:id])
+    if create_copier_from_request req
+      flash[:notice] = "Successfully edited and created!"
+      req.delete
+      redirect_to action: :index
+    else
+      flash[:notice] = "Unsuccessful edit...."
+    end
   end
   
   def destroy

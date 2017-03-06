@@ -1,6 +1,6 @@
 class CopiersController < ApplicationController
   respond_to :json
-  before_action :logged_in_admin, only: [:new, :create, :destroy]
+  before_action :logged_in_admin, only: [:new, :create, :edit, :destroy]
   
   def new
     @copier = Copier.new
@@ -22,9 +22,9 @@ class CopiersController < ApplicationController
   end
   
   def index
-    @search = Copier.search(params[:q])
-    @copier = @search.result
-    @search.build_condition
+    @q = Copier.search(params[:q])
+    @copier = @q.result
+    #@search.build_condition
     
     # @q = Copier.search(params[:q])
     # @copier = @q.result
