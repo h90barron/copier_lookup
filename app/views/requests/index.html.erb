@@ -4,17 +4,21 @@
     <tr>
       <th>Name</th>
       <th>Manufacturer</th>
-      <th>Submitter's name</th>
-      <th>Submitter's phone</th>
+      <th>Marketer</th>
+      <th>Supports Papercut</th>
+      <th>Embedded Platform</th>
+      <th>Dependencies</th>
     </tr>
   </thead>
   <tbody>
     <%= div_for @requests do |f| %>
     <tr data-link="<%= request_path(f) %>">
-      <td><%= f.name %></td>
-      <td><%= f.oem %></td>
-      <td><%= f.user_name %></td>
-      <td><%= f.user_phone %></td>
+      <td><%= f.req_name %></td>
+      <td><%= f.req_oem %></td>
+      <td><%= f.req_marketer %></td>
+      <td><%= f.req_pc_embedded %></td>
+      <td><%= f.req_embedded_platform %></td>
+      <td><%= f.req_pc_dependency %></td>
     </tr>
     <% end %>
   </tbody>

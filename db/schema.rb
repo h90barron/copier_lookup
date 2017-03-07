@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307032756) do
+ActiveRecord::Schema.define(version: 20170307034351) do
 
   create_table "copiers", force: :cascade do |t|
     t.string   "name"
@@ -35,11 +35,26 @@ ActiveRecord::Schema.define(version: 20170307032756) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string   "name"
+    t.string   "req_name"
     t.string   "user_name"
     t.string   "user_phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "req_oem"
+    t.string   "req_marketer"
+    t.boolean  "req_pc_embedded"
+    t.string   "req_embedded_platform"
+    t.boolean  "req_pc_int_scanning"
+    t.boolean  "req_pc_dependency"
+    t.string   "req_pc_dependency_detail"
+    t.string   "req_general_notes"
+    t.string   "req_aka"
+    t.datetime "req_intro_date"
+    t.datetime "req_disc_date"
+    t.boolean  "req_print"
+    t.boolean  "req_copy"
+    t.boolean  "req_scan"
+    t.boolean  "req_fax"
   end
 
   create_table "users", force: :cascade do |t|

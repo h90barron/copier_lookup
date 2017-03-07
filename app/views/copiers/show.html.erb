@@ -1,68 +1,72 @@
-<h1>Copier details</h1>
+<div class="container">
+  <h1>Copier details</h1>
 
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
-<% if @copier %>
-  <p><%= @copier.name %></p>
-<% end %>
 
-<% if admin_logged_in? %>
-  <%= link_to "Delete", copier_path, method: :delete %>
+  <% if admin_logged_in? %>
+    <%= link_to "Delete", copier_path, method: :delete %>
+    <p></p>
+    <%= link_to "Edit", edit_copier_path %>
+  <% end %>
+  </div>
+
   <p></p>
-  <%= link_to "Edit", edit_copier_path %>
-<% end %>
 
-<dl class="dl-horizontal">
-  <dt>Model: </dt>
-  <dd><%= @copier.name %></dd>
+<div class="container">
   
-  <dt>Manufacturer: </dt>
-  <dd><%= @copier.oem %></dd>
+  <dl class="dl-horizontal">
+    <dt>Model:             </dt>
+    <dd><%= @copier.name %></dd>
   
-  <dt>Marketer: </dt>
-  <dd><%= @copier.marketer %></dd>
+    <dt>Manufacturer: </dt>
+    <dd><%= @copier.oem %></dd>
   
-  <dt>Supports Papercut embeded appplication: </dt>
-  <dd><%= @copier.pc_embedded %></dd>
+    <dt>Marketer: </dt>
+    <dd><%= @copier.marketer %></dd>
   
-  <dt>Embedded Platform: </dt>
-  <dd><%= @copier.embedded_platform %></dd>
+    <dt>Supports Papercut embeded appplication: </dt>
+    <dd><%= @copier.pc_embedded %></dd>
   
-  <dt>Supports papercut integrated scanning: </dt>
-  <dd><%= @copier.pc_int_scanning %></dd>
+    <dt>Embedded Platform: </dt>
+    <dd><%= @copier.embedded_platform %></dd>
   
-  <dt>Dependencies for papercut: </dt>
-  <dd><%= @copier.pc_dependency %></dd>
+    <dt>Supports papercut integrated scanning: </dt>
+    <dd><%= @copier.pc_int_scanning %></dd>
   
-  <dt>Dependency details: </dt>
-  <dd><%= @copier.pc_dependency_detail %></dd>
+    <dt>Dependencies for papercut: </dt>
+    <dd><%= @copier.pc_dependency %></dd>
   
-  <dt>General notes: </dt>
-  <dd><%= @copier.general_notes %></dd>
+    <dt>Dependency details: </dt>
+    <dd><%= @copier.pc_dependency_detail %></dd>
   
-  <dt>Also sold as: </dt>
-  <dd><%= @copier.aka %></dd>
+    <dt>General notes: </dt>
+    <dd><%= @copier.general_notes %></dd>
   
-  <dt>Introduction date: </dt>
-  <dd><%= @copier.intro_date.to_s %></dd>
+    <dt>Also sold as: </dt>
+    <dd><%= @copier.aka %></dd>
   
-  <dt>Discontinued date: </dt>
-  <dd><%= @copier.disc_date.to_s %></dd>
+    <dt>Introduction date: </dt>
+    <dd><%= @copier.intro_date.to_s %></dd>
   
-  <dt>Supports Printing: </dt>
-  <dd><%= @copier.print %></dd>
+    <dt>Discontinued date: </dt>
+    <dd><%= @copier.disc_date.to_s %></dd>
   
-  <dt>Supports Copying: </dt>
-  <dd><%= @copier.copy %></dd>
+    <dt>Supports Printing: </dt>
+    <dd><%= @copier.print %></dd>
   
-  <dt>Supports Scanning: </dt>
-  <dd<%= @copier.scan %></dd>
+    <dt>Supports Copying: </dt>
+    <dd><%= @copier.copy %></dd>
   
-  <dt>Support Faxing: </dt>
-  <dd><%= @copier.fax %></dd>
-</dl>
+    <dt>Supports Scanning: </dt>
+    <dd><%= @copier.scan %></dd>
+  
+    <dt>Supports Faxing: </dt>
+    <dd><%= @copier.fax %></dd>
+  </dl>
+</div>
 
 
 

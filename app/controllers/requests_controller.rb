@@ -28,11 +28,10 @@ class RequestsController < ApplicationController
   end
   
   def update
-    req = Request.find_by(id: params[:id])
-    if create_copier_from_request req
+    @req = Request.find_by(id: params[:id])
+    if @req.update_attributes(request_params)
       flash[:notice] = "Successfully edited and created!"
-      req.delete
-      redirect_to action: :index
+      redirect_to @req
     else
       flash[:notice] = "Unsuccessful edit...."
     end
@@ -58,7 +57,9 @@ class RequestsController < ApplicationController
   
   private
     def request_params
-      params.require(:request).permit(:name, :manufacturer, :papercut, :coinop, :card_reader, :user_name, :user_phone)
+      params.require(:request).permit(:user_name, :user_phone, :req_name, :req_oem, :req_marketer, :req_pc_embedded, :req_embedded_platform,
+                     :req_pc_int_scanning, :req_pc_dependency, :req_pc_dependency_detail, :req_general_notes, 
+                     :req_aka, :req_intro_date, :req_disc_date, :req_print, :req_scan, :req_copy, :req_fax)
     end
   
 end
