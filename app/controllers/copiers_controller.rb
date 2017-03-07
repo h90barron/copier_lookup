@@ -55,7 +55,9 @@ class CopiersController < ApplicationController
   private
   
     def copier_params
-      params.require(:copier).permit(:name, :manufacturer, :papercut, :coinop, :card_reader)
+      params.require(:copier).permit(:name, :oem, :marketer, :pc_embedded, :embedded_platform,
+                     :pc_int_scanning, :pc_dependency, :pc_dependency_detail, :general_notes, 
+                     :aka, :intro_date, :disc_date, :print, :scan, :copy, :fax)
     end
     
     # def logged_in_admin

@@ -2,7 +2,7 @@
 <div class="form-group">
   <label for="search_copier">Copier Search</label>
     <%= search_form_for @q, html: { class: "form-inline", id: "search_copier" } do |f| %>
-      <%= f.search_field :name_or_manufacturer_cont, placeholder: "Search...", class: "form-control" %>
+      <%= f.search_field :name_or_oem_cont, placeholder: "Search...", class: "form-control" %>
     <% end %>
   </div>
 

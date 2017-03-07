@@ -11,28 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302161451) do
+ActiveRecord::Schema.define(version: 20170307032756) do
 
   create_table "copiers", force: :cascade do |t|
     t.string   "name"
-    t.string   "manufacturer"
-    t.boolean  "papercut"
-    t.boolean  "coinop"
-    t.boolean  "card_reader"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "oem"
+    t.string   "marketer"
+    t.boolean  "pc_embedded"
+    t.string   "embedded_platform"
+    t.boolean  "pc_int_scanning"
+    t.boolean  "pc_dependency"
+    t.string   "pc_dependency_detail"
+    t.string   "general_notes"
+    t.string   "aka"
+    t.datetime "intro_date"
+    t.datetime "disc_date"
+    t.boolean  "print"
+    t.boolean  "copy"
+    t.boolean  "scan"
+    t.boolean  "fax"
   end
 
   create_table "requests", force: :cascade do |t|
     t.string   "name"
-    t.string   "manufacturer"
-    t.boolean  "papercut"
-    t.boolean  "coinop"
-    t.boolean  "card_reader"
     t.string   "user_name"
     t.string   "user_phone"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
